@@ -176,7 +176,7 @@ let getDetailDoctorById = (inputId) => {
                     nest: true // nhóm các thuộc tính cùng 1 bảng (api)
                 })
                 if (data && data.image) {
-                    data.image = new Buffer(data.image, 'base64').toString('binary');
+                    data.image = Buffer.from(data.image, 'base64').toString('binary');
                 }
                 if (!data) data = {};
                 resolve({
@@ -347,7 +347,7 @@ let getProfileDoctorById = (doctorId) => {
                     nest: true // nhóm các thuộc tính cùng 1 bảng (api)
                 })
                 if (data && data.image) {
-                    data.image = new Buffer(data.image, 'base64').toString('binary');
+                    data.image = Buffer.from(data.image, 'base64').toString('binary');
                 }
                 if (!data) data = {};
                 resolve({
